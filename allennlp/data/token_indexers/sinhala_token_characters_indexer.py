@@ -12,7 +12,7 @@ from allennlp.data.vocabulary import Vocabulary
 from allennlp.data.tokenizers.sinhala_character_tokenizer import CharacterTokenizer
 
 
-@TokenIndexer.register("characters")
+@TokenIndexer.register("sinhala_characters")
 class TokenCharactersIndexer(TokenIndexer[List[int]]):
     """
     This :class:`TokenIndexer` represents tokens as lists of character indices.

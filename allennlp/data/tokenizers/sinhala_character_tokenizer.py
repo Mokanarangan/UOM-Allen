@@ -5,7 +5,7 @@ from overrides import overrides
 from allennlp.common import Params
 from allennlp.data.tokenizers.token import Token
 from allennlp.data.tokenizers.tokenizer import Tokenizer
-import allennlp.data.tokenizers.utils.sinhala as sinhala
+from allennlp.data.tokenizers.utils.sinhala import get_letters
 
 
 @Tokenizer.register("sinhala_character")
@@ -62,7 +62,7 @@ class SinhalaCharacterTokenizer(Tokenizer):
             tokens = [Token(text_id=c + 1)
                       for c in text.encode(self._byte_encoding)]
         else:
-            tokens = [Token(t) for t in sinhala.get_letters(text)]
+            tokens = [Token(t) for t in get_letters(text)]
         for start_token in self._start_tokens:
             if isinstance(start_token, int):
                 token = Token(text_id=start_token, idx=0)

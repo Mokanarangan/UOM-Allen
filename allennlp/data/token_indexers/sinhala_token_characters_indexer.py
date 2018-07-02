@@ -13,7 +13,7 @@ from allennlp.data.tokenizers.sinhala_character_tokenizer import CharacterTokeni
 
 
 @TokenIndexer.register("sinhala_characters")
-class TokenCharactersIndexer(TokenIndexer[List[int]]):
+class SinhalaTokenCharactersIndexer(TokenIndexer[List[int]]):
     """
     This :class:`TokenIndexer` represents tokens as lists of character indices.
 

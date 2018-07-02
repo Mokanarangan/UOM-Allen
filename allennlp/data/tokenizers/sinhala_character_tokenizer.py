@@ -9,7 +9,7 @@ from allennlp.data.tokenizers.utils.sinhala import get_letters
 
 
 @Tokenizer.register("sinhala_character")
-class SinhalaCharacterTokenizer(Tokenizer):
+class CharacterTokenizer(Tokenizer):
     """
     A ``CharacterTokenizer`` splits strings into character tokens.
 

@@ -147,6 +147,10 @@ class ModelTestCase(AllenNlpTestCase):
 
                 if parameter.grad is None:
                     has_zero_or_none_grads[name] = "No gradient computed (i.e parameter.grad is None)"
+
+                elif parameter.grad.is_sparse or parameter.grad.data.is_sparse:
+                    pass
+
                 # Some parameters will only be partially updated,
                 # like embeddings, so we just check that any gradient is non-zero.
                 elif (parameter.grad.cpu() == zeros).all():
